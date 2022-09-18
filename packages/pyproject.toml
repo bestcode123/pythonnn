@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pythonnn"
-version = "0.1.0"
+version = "0.1.12"
 authors = [
   { name="bestcode123", email="" },
 ]
@@ -19,5 +19,5 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/bestcode123"
-"Bug Tracker" = "https://github.com/bestcode123"
+"Homepage" = "https://github.com/bestcode123/pythonnn"
+"Bug Tracker" = "https://github.com/bestcode123/pythonnn"

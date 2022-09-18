@@ -1,17 +1,49 @@
 import numpy as np
-import tools
 
-def sigmoid(x):
-    return 1/(1+np.exp(-x))
 
-def tanh(x):
-    return np.tanh(x)
+def max(x, y):
+    if x > y: return x
+    else: return y
 
-def relu(x):
-    return tools.max(0, x)
+def min(x, y):
+    if x < y: return x
+    else: return y
 
-def relu2(x):
-    return tools.max(-1, x)
+class Sigmoid:
+    def __init__(self):
+        pass
 
-def cutoff(x):
-    return tools.min(1, x)
+    def use(self, x):
+        return 1 / (1 + np.exp(-x))
+
+
+class Tanh:
+    def __init__(self):
+        pass
+
+    def use(self, x):
+        return np.tanh(x)
+
+
+class ReLU:
+    def __init__(self):
+        pass
+
+    def use(self, x):
+        return max(0, x)
+
+
+class ReLU2:
+    def __init__(self):
+        pass
+
+    def use(self, x):
+        return max(-1, x)
+
+
+class Cutoff:
+    def __init__(self):
+        pass
+
+    def use(self, x):
+        return min(1, x)

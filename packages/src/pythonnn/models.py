@@ -7,13 +7,13 @@ class Sequential:
     def check_activation(self, x):
         found = False
         for a in self.activations:
-            if(a == x): found = True
+            if (a == x): found = True
         return found
 
     def add(self, layer):
         if self.addlayer:
             if len(layer) == 2:
-                if self.check_activation(layer[1]):
+                if not self.check_activation(layer[1]):
                     self.model.append(layer)
                 else:
                     raise ValueError("Your models activation is not found / not supported")
@@ -32,7 +32,7 @@ class Sequential:
             return 1
         else:
             final = []
-            for im in range(len(model) - 1): # Weight Creation
+            for im in range(len(model) - 1):  # Weight Creation
                 m1 = []
                 for i in range(model[im][0]):
                     m2 = []
@@ -42,7 +42,7 @@ class Sequential:
                 final.append(m1)
             modelout.append(final)
             final = []
-            for im in range(len(model) - 1): # Bias Creation
+            for im in range(len(model) - 1):  # Bias Creation
                 if im != 0:
                     m1 = []
                     for i in range(model[im][0]):
@@ -51,3 +51,8 @@ class Sequential:
             modelout.append(final)
             self.addlayer = False
             return modelout
+
+    def compute_losses(self, model_compiled):
+        m1 = model_compiled
+        num = m1[0][0][0][0]
+        print(self.model[0][1].use(0, num))
